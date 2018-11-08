@@ -14,9 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 
     <script type="text/babel">
+
+        // Using JSX
         const Header = <h1>Hello World by ReactJS</h1>;
         ReactDOM.render(Header, document.getElementById('app'));
 
+        // Using React Component
+        // A function that returns JSX is called React component
         const Dated = function(){
             const date = new Date();
             return <h2>Todays Date: {date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()}</h2>

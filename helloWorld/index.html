@@ -13,17 +13,24 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 
+    <style>
+    .header {
+        color:olive;
+        font-size: 49px;
+    }
+    </style>
+
     <script type="text/babel">
 
         // Using JSX
-        const Header = <h1>Hello World by ReactJS</h1>;
+        const Header = <h1 className="header">Hello World by ReactJS</h1>;
         ReactDOM.render(Header, document.getElementById('app'));
 
         // Using React Component
         // A function that returns JSX is called React component
         const Dated = function(){
             const date = new Date();
-            return <h2>Todays Date: {date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()}</h2>
+            return <h2 style={{color:'red'}}>Todays Date: {date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()}</h2>
         }
 
         ReactDOM.render(<Dated />, document.getElementById('date'));

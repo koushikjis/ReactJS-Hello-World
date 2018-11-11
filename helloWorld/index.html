@@ -9,6 +9,7 @@
 <body>
     <span id='app'></span>
     <span id="date"></span>
+    <span id="cpyrt"></span>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
@@ -30,10 +31,17 @@
         // A function that returns JSX is called React component
         const Dated = function(){
             const date = new Date();
-            return <h2 style={{color:'red'}}>Todays Date: {date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()}</h2>
+            return <h2>Todays Date: {date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()}</h2>
         }
 
         ReactDOM.render(<Dated />, document.getElementById('date'));
+
+        // Styling JSX - inline
+        const CopyRight = function(){
+            const year = new Date().getFullYear();
+            return <h3  style={{color:'red'}}> Copy Right: {year}</h3>
+        }
+        ReactDOM.render(<CopyRight />, document.getElementById('cpyrt'));
     </script>
 </body>
 </html>

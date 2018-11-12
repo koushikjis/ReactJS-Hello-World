@@ -12,18 +12,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
 
     <span id="code1"></span>
-    <span id="code2"></span>
-    <span id="code3"></span>
 
     <script type="text/babel">
+        const Header = function(props){
+            return  <div>
+                        <h1 style={ {fontSize: props.size} }>
+                            THE {props.name} COMPONENTS
+                        </h1>
+                        <hr />
+                    </div>
+        }
         const Colors = function(props){
             return (
-                <h1 style={ {color: props.color, fontSize: props.size} }>Color code: {props.color} - Size: {props.size}</h1>
+                <h1 style={ {color: props.color, fontSize: props.size} }>
+                    Color code: {props.color} - Size: {props.size}
+                </h1>
             )
         }
-        ReactDOM.render(<Colors color='#ff0000' size='25px' />, document.getElementById('code1') );
-        ReactDOM.render(<Colors color='#003388' size='30px' />, document.getElementById('code2') );
-        ReactDOM.render(<Colors color='#00ff00' size='35px' />, document.getElementById('code3') );
+        const App = function(){
+            return(
+                <div>
+                    <Header name="HEADER" size='40px'/>
+                    <Colors color='#ff0000' size='25px' />
+                    <Colors color='#00ff00' size='30px' />
+                    <Colors color='#ffff00' size='35px' />
+                    <Header name="FOOTER" size='15px'/>
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, document.getElementById('code1') );
     </script>
 </body>
 </html>

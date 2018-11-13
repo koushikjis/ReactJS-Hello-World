@@ -15,18 +15,33 @@
 
     <script type="text/babel">
         class Counter extends React.Component{
+            constructor(){
+                super();
+
+                this.state = {
+                    count: 0
+                }
+
+                this.handleAdd = this.handleAdd.bind(this);
+                this.handleSubtract = this.handleSubtract.bind(this);
+            }
             handleAdd(){
-                console.log("Addedd!!");
+                this.setState({
+                    count: this.state.count + 1
+                })
             }
             handleSubtract(){
-                console.log("Subtracted!!");
+                this.setState({
+                    count: this.state.count - 1
+                })
             }
             render(){
                 return (
                     <div>
                         <h2> Counter App </h2>
+                        <h3>{(this.state.count) ? ((this.state.count % 2 == 0) ? 'Even' : 'Odd') : 'Zero'}</h3>
                         <button onClick={this.handleSubtract}>-</button>
-                            <span style={{padding: '10px'}}> 9 </span>
+                            <span style={{padding: '10px'}}> {this.state.count} </span>
                         <button onClick={this.handleAdd}>+</button>
                     </div>
                 )
